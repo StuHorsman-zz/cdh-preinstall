@@ -17,7 +17,11 @@ fi
 for host in `cat hosts.txt`
 do
 	echo -e "${red}--> Creating cloudera directory on $host...${NC}"
-	ssh -i $keyFile ec2-user@$host 'mkdir cloudera'
+	ssh -i $keyFile ec2-user@$host 'mkdir -p cloudera/files'
+
+	# Copy all files to host
+	echo -e "${red}--> Copying files to $host...${NC}"
+	scp -i $keyFile -r files/* ec2-user@$host:cloudera/files
 
 	for script in `cat scripts.txt`
 	do

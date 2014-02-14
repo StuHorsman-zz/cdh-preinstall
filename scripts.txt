@@ -1,2 +1,8 @@
-01_date.sh
-02_id.sh
+01_disable_swappiness.sh
+02_disable_iptables.sh
+03_disable_selinux.sh
+04_update_timezone.sh
+05_create_disks.sh
+06_install_puppet.sh
+07_add_users.sh
+08_install_mysql.sh
